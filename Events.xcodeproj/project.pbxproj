@@ -56,15 +56,31 @@
 		AEB6DBCC2684FD7100D2CE16 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				AEB6DBCD2684FD7100D2CE16 /* AppDelegate.swift */,
-				AEB6DBCF2684FD7100D2CE16 /* SceneDelegate.swift */,
+				AEB6DBE12684FDB200D2CE16 /* Lifecycle */,
 				AEB6DBD12684FD7100D2CE16 /* ViewController.swift */,
 				AEB6DBD32684FD7100D2CE16 /* Main.storyboard */,
-				AEB6DBD62684FD7300D2CE16 /* Assets.xcassets */,
 				AEB6DBD82684FD7300D2CE16 /* LaunchScreen.storyboard */,
+				AEB6DBE22684FDC100D2CE16 /* Resources */,
 				AEB6DBDB2684FD7300D2CE16 /* Info.plist */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		AEB6DBE12684FDB200D2CE16 /* Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				AEB6DBCD2684FD7100D2CE16 /* AppDelegate.swift */,
+				AEB6DBCF2684FD7100D2CE16 /* SceneDelegate.swift */,
+			);
+			path = Lifecycle;
+			sourceTree = "<group>";
+		};
+		AEB6DBE22684FDC100D2CE16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AEB6DBD62684FD7300D2CE16 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,16 +303,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2P9XDG372;
+				DEVELOPMENT_TEAM = 8C4BXC8Z6S;
 				INFOPLIST_FILE = Events/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.figfolders.Events;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.eventsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -306,16 +323,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2P9XDG372;
+				DEVELOPMENT_TEAM = 8C4BXC8Z6S;
 				INFOPLIST_FILE = Events/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.figfolders.Events;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lourdes.eventsapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
