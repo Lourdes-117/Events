@@ -15,9 +15,16 @@ class CalendarMonthCollectionViewModel {
     var totalDays = [String]()
     
     private let cellPadding: CGFloat = 2
-    private let numberOfCells: CGFloat = 8
-    func getCellSizeForCollectionViewFrame(_ collecionViewFrame: CGRect) -> CGSize {
-        let cellSizeLength = ((collecionViewFrame.width - cellPadding) / numberOfCells)
-        return CGSize(width: cellSizeLength, height: cellSizeLength)
+    private let numberOfCells: CGFloat = 7
+    func getCellSizeForCollectionViewWidth(_ collecionViewWidth: CGFloat) -> CGSize {
+        let cellWidth = ((collecionViewWidth - cellPadding) / numberOfCells)
+        let cellHeight = cellWidth
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    func getCollectionViewHeightForWidth(_ width: CGFloat) -> CGFloat {
+        let numberOfCellsInARow = 7
+        let numberOfRows = totalDays.count / numberOfCellsInARow
+        return CGFloat(numberOfRows) * getCellSizeForCollectionViewWidth(width).height
     }
 }

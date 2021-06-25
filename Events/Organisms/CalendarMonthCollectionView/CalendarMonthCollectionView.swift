@@ -8,22 +8,24 @@
 import UIKit
 
 class CalendarMonthCollectionView: UIView {
-// MARK: Outlets and Properties
+// MARK: - Outlets and Properties
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     
     let viewModel = CalendarMonthCollectionViewModel()
     
-// MARK: Lifecycle
+// MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         commonInit(viewModel.kIdentifier)
     }
     
-    func configure() {
+    func configureWithDate(_ date: Date) {
+        viewModel.selectedDate = date
+        setupValues()
         registerCells()
         setupCellSize()
         setupDatasourceDelegate()
-        setMonths()
     }
     
     private func registerCells() {
@@ -33,7 +35,8 @@ class CalendarMonthCollectionView: UIView {
     
     private func setupCellSize() {
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        flowLayout?.itemSize = viewModel.getCellSizeForCollectionViewFrame(collectionView.frame)
+        flowLayout?.itemSize = viewModel.getCellSizeForCollectionViewWidth(collectionView.frame.width)
+        layoutIfNeeded()
     }
     
     private func setupDatasourceDelegate() {
@@ -41,7 +44,7 @@ class CalendarMonthCollectionView: UIView {
         collectionView.delegate = self
     }
     
-    func setMonths() {
+    func setupValues() {
         viewModel.totalDays.removeAll()
         let daysInMonth = viewModel.selectedDate.daysInMonth ?? 0
         let daysInMonthBeforeFirstDay = viewModel.selectedDate.daysBeforeFirstDayOfMonth ?? 0
@@ -56,7 +59,7 @@ class CalendarMonthCollectionView: UIView {
 }
 
 
-// MARK: CollectionView Datasource
+// MARK: - CollectionView Datasource
 extension CalendarMonthCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.totalDays.count
@@ -64,11 +67,11 @@ extension CalendarMonthCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.dateCellIdentifier, for: indexPath) as? CalendarDayCollectionViewCell else { return UICollectionViewCell() }
-        cell.dateLabel.text = viewModel.totalDays[indexPath.row]
+            cell.conFigureCell(viewModel.totalDays[indexPath.row], date: viewModel.selectedDate)
         return cell
     }
 }
 
-// MARK: CollectionView Datasource
+// MARK: - CollectionView Datasource
 extension CalendarMonthCollectionView: UICollectionViewDelegate {
 }

@@ -22,10 +22,19 @@ extension Date {
         return Calendar.current.date(byAdding: .month, value: -1, to: self)
     }
     
+    func byAddingMonths(_ numberOffMonthsToAdd: Int) -> Date? {
+        return Calendar.current.date(byAdding: .month, value: numberOffMonthsToAdd, to: self)
+    }
+    
     var monthString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = StringConstants.shared.dateFormatter.monthStringDateFormatter
         return dateFormatter.string(from: self)
+    }
+    
+    var monthShortName: String {
+        let components = Calendar.current.dateComponents([.month], from: self)
+        return Calendar.current.shortMonthSymbols[(components.month ?? 1) - 1]
     }
     
     var yearString: String {

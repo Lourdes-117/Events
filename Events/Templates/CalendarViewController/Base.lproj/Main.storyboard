@@ -17,32 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Tu-4d-iLw" customClass="CalendarMonthCollectionView" customModule="Events" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KbQ-0t-OEl">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAj-gm-Dt0">
-                                <rect key="frame" x="0.0" y="832" width="414" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onTapNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o5k-JF-dDt"/>
-                                </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7Tu-4d-iLw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="TBo-wX-PpQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UAj-gm-Dt0" secondAttribute="bottom" id="bRi-9Z-sir"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Tu-4d-iLw" secondAttribute="bottom" id="bfs-2H-8cS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Tu-4d-iLw" secondAttribute="trailing" id="gaC-b8-Dl7"/>
-                            <constraint firstItem="UAj-gm-Dt0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qNg-6Z-emA"/>
-                            <constraint firstItem="UAj-gm-Dt0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qXY-mp-hLD"/>
-                            <constraint firstItem="7Tu-4d-iLw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rlf-gW-7A4"/>
+                            <constraint firstItem="KbQ-0t-OEl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4Oa-0K-EoD"/>
+                            <constraint firstItem="KbQ-0t-OEl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="76I-j0-04Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KbQ-0t-OEl" secondAttribute="bottom" id="9eb-B3-DoP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KbQ-0t-OEl" secondAttribute="trailing" id="sjH-nA-R5J"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calendarView" destination="7Tu-4d-iLw" id="l7I-Hz-wiN"/>
+                        <outlet property="tableView" destination="KbQ-0t-OEl" id="7Bq-dc-WCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
