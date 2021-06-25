@@ -12,6 +12,8 @@ class CalendarMonthTableViewCell: UITableViewCell {
 
     @IBOutlet weak var calendarMonthView: CalendarMonthCollectionView!
     
+    weak var delegate: CalendarSelectionDelegate?
+    
     var dateForCell: Date?
 // MARK: - Lifecycle Methods
     override func awakeFromNib() {
@@ -28,6 +30,7 @@ class CalendarMonthTableViewCell: UITableViewCell {
     func configureCell(date: Date) {
         calendarMonthView.configureWithDate(date)
         dateForCell = date
+        calendarMonthView.delegate = delegate
     }
     
 }

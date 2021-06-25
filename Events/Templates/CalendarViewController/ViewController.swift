@@ -42,6 +42,7 @@ extension ViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: viewModel.calendarTableViewCellIdentifier, for: indexPath) as? CalendarMonthTableViewCell else{ return UITableViewCell() }
+        cell.delegate = self
         cell.configureCell(date: viewModel.currentDate)
         viewModel.currentDate = viewModel.currentDate.nextMonth ?? Date()
         return cell
@@ -52,5 +53,12 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         viewModel.getTableViewCellHeightForWidth(tableView.frame.width, date: viewModel.currentDate)
+    }
+}
+
+// MARK: - Calendar Selection Delegate
+extension ViewController: CalendarSelectionDelegate {
+    func didSelectDate(_ date: Date) {
+        debugPrint(date)
     }
 }

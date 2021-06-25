@@ -14,6 +14,8 @@ class CalendarMonthCollectionView: UIView {
     
     let viewModel = CalendarMonthCollectionViewModel()
     
+    weak var delegate: CalendarSelectionDelegate?
+    
 // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -74,4 +76,11 @@ extension CalendarMonthCollectionView: UICollectionViewDataSource {
 
 // MARK: - CollectionView Datasource
 extension CalendarMonthCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let dateSelected = (indexPath.row + 1) - (viewModel.selectedDate.daysBeforeFirstDayOfMonth ?? 0)
+        if dateSelected <= 0 { return }
+        guard dateSelected > 0,
+              let date = viewModel.selectedDate.setDate(dateSelected) else { return }
+        delegate?.didSelectDate(date)
+    }
 }

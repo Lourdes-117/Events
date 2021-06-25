@@ -150,8 +150,8 @@
 			children = (
 				AEB6DBEE2685020C00D2CE16 /* CalendarDayCollectionViewCell */,
 				AEB6DBEC268501C200D2CE16 /* CalendarMonthCollectionView.xib */,
-				AEB6DBE82685019900D2CE16 /* CalendarMonthCollectionView.swift */,
 				AEB6DBF62685045600D2CE16 /* CalendarMonthCollectionViewModel.swift */,
+				AEB6DBE82685019900D2CE16 /* CalendarMonthCollectionView.swift */,
 			);
 			path = CalendarMonthCollectionView;
 			sourceTree = "<group>";

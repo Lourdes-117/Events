@@ -69,6 +69,11 @@ extension Date {
         return components.weekday
     }
     
+    func setDate(_ date: Int) -> Date? {
+        let date = Calendar.current.date(bySetting: .day, value: date, of: self)
+        return date?.toLocalTime()
+    }
+    
     func toLocalTime() -> Date {
         let timezoneOffset = TimeZone.current.secondsFromGMT()
         let epochDate = self.timeIntervalSince1970

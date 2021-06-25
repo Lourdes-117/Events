@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CalendarSelectionDelegate: AnyObject {
+    func didSelectDate(_ date: Date)
+}
+
 class CalendarMonthCollectionViewModel {
     let kIdentifier = String(describing: CalendarMonthCollectionView.self)
     let dateCellIdentifier = String(describing: CalendarDayCollectionViewCell.self)
