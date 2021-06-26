@@ -14,6 +14,24 @@ protocol AddNewEventDelegate: AnyObject {
 enum RemindBefore: Int {
     case tenMinuted = 0
     case oneHour = 1
+    
+    var reminderContext: String {
+        switch self {
+        case .tenMinuted:
+            return "Event in 10 minutes"
+        case .oneHour:
+            return "Event in 1 hour"
+        }
+    }
+    
+    var timeToAdd: TimeInterval {
+        switch self {
+        case .tenMinuted:
+            return 1000
+        case .oneHour:
+            return 6000
+        }
+    }
 }
 
 class CalendarEventSetterViewController: UIViewController {
@@ -52,6 +70,8 @@ class CalendarEventSetterViewController: UIViewController {
     @IBAction func onTapAddButton(_ sender: Any) {
         guard let remindBefore = RemindBefore(rawValue: reminderControl.selectedSegmentIndex) else { return }
         self.dismiss(animated: true, completion: nil)
-        delegate?.addEvent(time: timePicker.date.toLocalTime(), title: eventTitle.text ?? "", remindBefore: remindBefore)
+        var timeToSetReminder = timePicker.date
+        timeToSetReminder.addTimeInterval(remindBefore.timeToAdd)
+        delegate?.addEvent(time: timeToSetReminder, title: eventTitle.text ?? "", remindBefore: remindBefore)
     }
 }

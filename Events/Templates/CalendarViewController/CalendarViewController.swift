@@ -43,5 +43,20 @@ extension CalendarViewController: CalendarSelectionDelegate {
 extension CalendarViewController: AddNewEventDelegate {
     func addEvent(time: Date, title: String, remindBefore: RemindBefore) {
         debugPrint(time, title, remindBefore)
+        let content = UNMutableNotificationContent()
+        content.title = remindBefore.reminderContext
+        content.body = title
+        
+        let dateComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: time)
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: true)
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString,
+                                            content: content, trigger: trigger)
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { error in
+            guard let error = error else{ return }
+            debugPrint(String(describing: error))
+        }
     }
 }
