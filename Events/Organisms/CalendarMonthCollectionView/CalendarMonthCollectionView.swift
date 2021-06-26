@@ -77,10 +77,11 @@ extension CalendarMonthCollectionView: UICollectionViewDataSource {
 // MARK: - CollectionView Datasource
 extension CalendarMonthCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let dateSelected = (indexPath.row + 1) - (viewModel.selectedDate.daysBeforeFirstDayOfMonth ?? 0)
-        if dateSelected <= 0 { return }
-        guard dateSelected > 0,
-              let date = viewModel.selectedDate.setDate(dateSelected) else { return }
-        delegate?.didSelectDate(date)
+        let daySelected = (indexPath.row + 1) - (viewModel.selectedDate.daysBeforeFirstDayOfMonth ?? 0)
+        var dateComponent = DateComponents()
+        guard daySelected > 0 else { return }
+        dateComponent.day = (daySelected - viewModel.selectedDate.date)
+        let dateSelectedd = Calendar.current.date(byAdding: dateComponent, to: viewModel.selectedDate) ?? Date()
+        delegate?.didSelectDate(dateSelectedd)
     }
 }

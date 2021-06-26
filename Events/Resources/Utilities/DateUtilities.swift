@@ -74,6 +74,10 @@ extension Date {
         return date?.toLocalTime()
     }
     
+    var date: Int {
+        return Calendar.current.component(.day, from: self)
+    }
+    
     func toLocalTime() -> Date {
         let timezoneOffset = TimeZone.current.secondsFromGMT()
         let epochDate = self.timeIntervalSince1970
