@@ -7,11 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalendarViewController: UIViewController {
     
+// MARK: - Outlets
     let viewModel = CalendarViewModel()
     @IBOutlet weak var containerView: UIView!
     
+// MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -28,9 +30,8 @@ class ViewController: UIViewController {
 }
 
 // MARK: - Calendar Selection Delegate
-extension ViewController: CalendarSelectionDelegate {
+extension CalendarViewController: CalendarSelectionDelegate {
     func didSelectDate(_ date: Date) {
-        debugPrint(date)
         guard let eventViewController = CalendarEventSetterViewController.initiateVC() else { return }
         eventViewController.delegate = self
         eventViewController.selectedDate = date
@@ -39,7 +40,7 @@ extension ViewController: CalendarSelectionDelegate {
 }
 
 // MARK: - Add Ebvent Delegate
-extension ViewController: AddNewEventDelegate {
+extension CalendarViewController: AddNewEventDelegate {
     func addEvent(time: Date, title: String, remindBefore: RemindBefore) {
         debugPrint(time, title, remindBefore)
     }

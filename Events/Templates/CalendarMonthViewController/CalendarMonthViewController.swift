@@ -8,13 +8,14 @@
 import UIKit
 
 class CalendarMonthViewController: UIViewController {
-
+// MARK: - Outlets
     @IBOutlet weak var calendarView: CalendarMonthCollectionView!
     
     var delegate: CalendarSelectionDelegate?
     
     var dateToSet: Date = Date()
     
+// MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
