@@ -32,6 +32,15 @@ extension ViewController: CalendarSelectionDelegate {
     func didSelectDate(_ date: Date) {
         debugPrint(date)
         guard let eventViewController = CalendarEventSetterViewController.initiateVC() else { return }
+        eventViewController.delegate = self
+        eventViewController.selectedDate = date
         self.present(eventViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Add Ebvent Delegate
+extension ViewController: AddNewEventDelegate {
+    func addEvent(time: Date, title: String, remindBefore: RemindBefore) {
+        debugPrint(time, title, remindBefore)
     }
 }
