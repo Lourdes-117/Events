@@ -31,5 +31,7 @@ class ViewController: UIViewController {
 extension ViewController: CalendarSelectionDelegate {
     func didSelectDate(_ date: Date) {
         debugPrint(date)
+        guard let eventViewController = CalendarEventSetterViewController.initiateVC() else { return }
+        self.present(eventViewController, animated: true, completion: nil)
     }
 }

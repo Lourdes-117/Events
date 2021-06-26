@@ -14,6 +14,8 @@
 		AE64A13B26872C380073186F /* CalendarMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64A13A26872C380073186F /* CalendarMonthViewController.swift */; };
 		AE64A13D26872CEA0073186F /* UIViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64A13C26872CEA0073186F /* UIViewControllerUtilities.swift */; };
 		AE64A13F26872E330073186F /* CalendarPageViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64A13E26872E330073186F /* CalendarPageViewControllerViewModel.swift */; };
+		AE64A142268768B10073186F /* CalendarEventSetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE64A141268768B10073186F /* CalendarEventSetterViewController.swift */; };
+		AE64A144268768BC0073186F /* CalendarEventSetterViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE64A143268768BC0073186F /* CalendarEventSetterViewController.storyboard */; };
 		AE79EBA8268623F3009C561C /* CalendarMonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE79EBA6268623F3009C561C /* CalendarMonthTableViewCell.swift */; };
 		AE79EBA9268623F3009C561C /* CalendarMonthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE79EBA7268623F3009C561C /* CalendarMonthTableViewCell.xib */; };
 		AE79EBAB26862620009C561C /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE79EBAA26862620009C561C /* CalendarViewModel.swift */; };
@@ -41,6 +43,8 @@
 		AE64A13A26872C380073186F /* CalendarMonthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonthViewController.swift; sourceTree = "<group>"; };
 		AE64A13C26872CEA0073186F /* UIViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtilities.swift; sourceTree = "<group>"; };
 		AE64A13E26872E330073186F /* CalendarPageViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarPageViewControllerViewModel.swift; sourceTree = "<group>"; };
+		AE64A141268768B10073186F /* CalendarEventSetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventSetterViewController.swift; sourceTree = "<group>"; };
+		AE64A143268768BC0073186F /* CalendarEventSetterViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarEventSetterViewController.storyboard; sourceTree = "<group>"; };
 		AE79EBA6268623F3009C561C /* CalendarMonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMonthTableViewCell.swift; sourceTree = "<group>"; };
 		AE79EBA7268623F3009C561C /* CalendarMonthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarMonthTableViewCell.xib; sourceTree = "<group>"; };
 		AE79EBAA26862620009C561C /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +94,15 @@
 				AE64A13A26872C380073186F /* CalendarMonthViewController.swift */,
 			);
 			path = CalendarMonthViewController;
+			sourceTree = "<group>";
+		};
+		AE64A140268768920073186F /* CalendarEventSetterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AE64A143268768BC0073186F /* CalendarEventSetterViewController.storyboard */,
+				AE64A141268768B10073186F /* CalendarEventSetterViewController.swift */,
+			);
+			path = CalendarEventSetterViewController;
 			sourceTree = "<group>";
 		};
 		AE79EBA5268623CF009C561C /* CalendarMonthTableViewCell */ = {
@@ -155,6 +168,7 @@
 				AEB6DBE42685011C00D2CE16 /* CalendarViewController */,
 				AE64A13026871EBF0073186F /* CalendarPageViewController */,
 				AE64A13726872B630073186F /* CalendarMonthViewController */,
+				AE64A140268768920073186F /* CalendarEventSetterViewController */,
 			);
 			path = Templates;
 			sourceTree = "<group>";
@@ -269,6 +283,7 @@
 				AE79EBA9268623F3009C561C /* CalendarMonthTableViewCell.xib in Resources */,
 				AEB6DBDA2684FD7300D2CE16 /* LaunchScreen.storyboard in Resources */,
 				AEB6DBD72684FD7300D2CE16 /* Assets.xcassets in Resources */,
+				AE64A144268768BC0073186F /* CalendarEventSetterViewController.storyboard in Resources */,
 				AE64A13626871F7A0073186F /* CalendarPageViewController.storyboard in Resources */,
 				AE64A13926872C240073186F /* CalendarMonthViewController.storyboard in Resources */,
 				AEB6DBF22685023400D2CE16 /* CalendarDayCollectionViewCell.xib in Resources */,
@@ -285,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB6DBD22684FD7100D2CE16 /* ViewController.swift in Sources */,
+				AE64A142268768B10073186F /* CalendarEventSetterViewController.swift in Sources */,
 				AEB6DBF12685023400D2CE16 /* CalendarDayCollectionViewCell.swift in Sources */,
 				AEB6DBF72685045600D2CE16 /* CalendarMonthCollectionViewModel.swift in Sources */,
 				AE64A13D26872CEA0073186F /* UIViewControllerUtilities.swift in Sources */,
