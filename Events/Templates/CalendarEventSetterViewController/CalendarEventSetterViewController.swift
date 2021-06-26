@@ -12,12 +12,12 @@ protocol AddNewEventDelegate: AnyObject {
 }
 
 enum RemindBefore: Int {
-    case tenMinuted = 0
+    case tenMinutes = 0
     case oneHour = 1
     
     var reminderContext: String {
         switch self {
-        case .tenMinuted:
+        case .tenMinutes:
             return "Event in 10 minutes"
         case .oneHour:
             return "Event in 1 hour"
@@ -26,7 +26,7 @@ enum RemindBefore: Int {
     
     var timeToAdd: TimeInterval {
         switch self {
-        case .tenMinuted:
+        case .tenMinutes:
             return 1000
         case .oneHour:
             return 6000
