@@ -27,9 +27,9 @@ enum RemindBefore: Int {
     var timeToAdd: TimeInterval {
         switch self {
         case .tenMinutes:
-            return 1000
+            return 600
         case .oneHour:
-            return 6000
+            return 3600
         }
     }
 }
@@ -70,7 +70,7 @@ class CalendarEventSetterViewController: UIViewController {
     @IBAction func onTapAddButton(_ sender: Any) {
         guard let remindBefore = RemindBefore(rawValue: reminderControl.selectedSegmentIndex) else { return }
         self.dismiss(animated: true, completion: nil)
-        var timeToSetReminder = timePicker.date
+        var timeToSetReminder = Date().addingTimeInterval(Date().timeIntervalSince(timePicker.date))
         timeToSetReminder.addTimeInterval(remindBefore.timeToAdd)
         delegate?.addEvent(time: timeToSetReminder, title: eventTitle.text ?? "", remindBefore: remindBefore)
     }
