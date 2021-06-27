@@ -38,7 +38,6 @@ class CalendarMonthCollectionView: UIView {
     private func setupCellSize() {
         let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         flowLayout?.itemSize = viewModel.getCellSizeForCollectionViewWidth(collectionView.frame.width)
-        layoutIfNeeded()
     }
     
     private func setupDatasourceDelegate() {

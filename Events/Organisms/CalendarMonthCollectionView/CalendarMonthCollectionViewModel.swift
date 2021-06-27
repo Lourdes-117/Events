@@ -25,10 +25,4 @@ class CalendarMonthCollectionViewModel {
         let cellHeight = cellWidth
         return CGSize(width: cellWidth, height: cellHeight)
     }
-    
-    func getCollectionViewHeightForWidth(_ width: CGFloat) -> CGFloat {
-        let numberOfCellsInARow = 7
-        let numberOfRows = totalDays.count / numberOfCellsInARow
-        return CGFloat(numberOfRows) * getCellSizeForCollectionViewWidth(width).height
-    }
 }
